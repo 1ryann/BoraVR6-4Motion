@@ -1,0 +1,255 @@
+body {
+    background-image: url('img/background-gradient.png');
+    background-size: cover;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+header {
+    text-align: left;
+    padding: 50px 0;
+}
+
+.header-content {
+    max-width: 50%;
+}
+
+.brand {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #cccccc;
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin: 0;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #cccccc;
+    margin-top: 10px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #a0a0a0;
+    margin-top: 15px;
+}
+
+.header-buttons {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+.manual-button {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 2px;
+}
+
+.manual-button:hover {
+    transform: scale(1.05);
+}
+
+.main-image {
+    text-align: center;
+    margin-top: -200px;
+    position: relative;
+    z-index: -1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-image img {
+    max-width: 85%;
+    height: auto;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 700;
+    border-bottom: 2px solid #8d0000;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.about-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.about-text {
+    flex-basis: 50%;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.about-images {
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.specs-section {
+    margin-top: 60px;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.spec-item .icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: #cccccc;
+}
+
+.spec-item strong {
+    color: #a0a0a0;
+    margin-right: 8px;
+}
+
+.gallery-section {
+    margin-top: 60px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+    border-radius: 8px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #a0a0a0;
+}
+@media (max-width: 768px) {
+    .header-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .header-buttons {
+        align-items: center;
+    }
+
+    .main-image {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    
+    .main-image img {
+        max-width: 100%;
+    }
+
+    .about-section {
+        flex-direction: column;
+    }
+    
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    animation-name: zoom;
+    animation-duration: 0.4s;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
